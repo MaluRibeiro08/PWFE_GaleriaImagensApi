@@ -1,0 +1,235 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #b6d3eb;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+header
+{
+    /* background-color: firebrick; */
+    height: 170x;
+}
+
+h1
+{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    color: #042c4d;
+}
+
+h2
+{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+main
+{
+    /* background-color: forestgreen; */
+    flex-grow: 1;
+}
+
+.pesquisa-conteiner
+{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.pesquisa-conteiner input
+{
+    width: 70%;
+    height: 50%;
+    font-size: 1.3rem;
+    padding: 3px;
+    background-color: transparent;
+    border-radius: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    border-width: 1px;
+    border-color: rgb(0, 10, 68);
+    transition: 1s;
+}
+
+.pesquisa-conteiner i
+{
+    color: rgb(0, 10, 68);
+}
+.pesquisa-conteiner input:focus
+{
+    background-color: #d1e5f5;
+}
+
+.pesquisa-conteiner:hover input
+{
+    background-color: #d1e5f5;
+}
+
+.galeria-container
+{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    justify-content: center;
+}
+
+.galeria-itens
+{
+    width: 340px;
+    height: 340px;
+    border: 7px solid #FFF;
+    border-radius: 3px;
+    transition: all .4s linear;
+    overflow: hidden;
+    /* background-color: #fff; */
+    /*o display de a é inline e, por isso, ele não respieta widht e height. 
+    Quando ele se torna flex-iten (por conta do display flex do pai) isso se modifica*/
+}
+
+.galeria-itens:hover
+{
+    box-shadow: 10px 10px 20px rgb(38, 74, 172);
+}
+
+.galeria-itens img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .4s linear;
+    filter: grayscale(70%);
+}
+
+.galeria-itens:hover img
+{
+    filter: grayscale(0%);
+    transform: scale(1.03) rotate(-1deg);
+}
+
+.slide
+{
+    background-color: rgba(184, 197, 255, 0.333);
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed; /* Deixa a div parada, mesmo se o usuário rolar a página*/
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Deixando ele atrás e transparente */
+    z-index: -999;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.slide:target /*Quando o slide for focado, estiver em enfase (no caso, quando clica na fotinha, ele fica em enfase por causa do href do link) */
+{
+    z-index: 999;
+    opacity: 1;
+}
+
+.slide .imagem-conteiner
+{
+    /* background-color: whitesmoke; */
+    max-width: 90%;
+    height: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative; /*Tiramos de estático para servir de base para os icones*/
+}
+.slide .icones
+{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #0009;
+    color: #FFF;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide .fechar
+{
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+}
+
+.slide .fechar:hover
+{
+    background-color: #FF4949;
+}
+
+.slide .anterior
+{
+    left: 0;
+    font-size: 2rem;
+}
+.slide .anterior:hover
+{
+    background-color: #000;
+}
+
+.slide .proximo
+{
+    right: 0;
+    font-size: 2rem;
+}
+
+.slide .proximo:hover
+{
+    background-color: #000;
+}
+
+.slide img
+{
+    width: 100%;
+    height: 100%;
+}
+
+footer
+{
+    /* background-color: goldenrod; */
+    height: 70px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    font-size: 1rem ;
+}
+
+.center
+{
+    display: grid;
+    place-content: center; /* align itens e justify. é um atalho. poderia ser, por exemplo, dois valores "place-content: center end; " */
+}
